@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+ {% block page_title %}
+ Hello All
+{% endblock %}
+
+
+{% block extra_css %}
+{% comment %} <link rel="stylesheet"
+      href="{% static 'hello/styles.css' %}"> {% endcomment %}
+<link rel="stylesheet"
+      href="{% static 'base.css' %}">
+{% endblock %}
+
+
+
+{% block nav_block %} 
+    {% include "hello/includes/nav.html" %}
+{% endblock %}
+
+{% block content %}
+<h1> Hello all </h1>
+{% for s in student_names %} 
+<h3> {{s}} </h3>
+
+<h3> {{s.name}} </h3>
+<p>{{s.address}}</p>
+<p>{{s.age}}</p>
+{% endfor %}
+{% endblock %}
+
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Name Page</title>
+</head>
+<body>
+{% comment %} <nav> This is the nav bar!</nav> {% endcomment %}
+    {% include "hello/includes/nav.html" %}
+     <h1> Hello {{ name_anything}} </h1>
+     {% for student in name_anything%}
+     <p>{{student.address}}</p>
+    <p>{{student.age}}</p>  
+    {% endfor %}
+</body>
+</html>
+
+
+
+
