@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>User Review</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>User Review</h1>
+
+        {% comment %} form data gets submitted to thank you url {% endcomment %}
+        {% comment %} <form method="POST" action="/thank-you"> {% endcomment %}
+
+        {% comment %} forms data gets submitted to the same url by default, so we can skip action attribute in form tag.  {% endcomment %}
+        <form method="POST" >
+            
+            {% comment %} This is the tag to add csrf protection to our form {% endcomment %}
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    {% comment %} {{ form.user_name.errors }} {% endcomment %}
+{% comment %} 
+    <label>Name</label>
+    <input type="text" name="name">
+
+    <br><br>
+
+    <label>Email</label>
+    <input type="email" name="email">
+
+    <br><br>
+
+    <label>Feedback</label>
+    <textarea name="feedback"></textarea>
+    <br><br> {% endcomment %}
+    <button type="submit">Submit</button>
+</form>
+       
+    </body>
+</html>
